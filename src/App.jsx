@@ -41,7 +41,10 @@ const router = createBrowserRouter(
       <Route path="profile" element={<EditProfile />} />
       <Route path="*" element={<NotFound />} />
     </Route>
-  )
+  ),
+  {
+    basename: "/react-4.14",
+  }
 );
 
 function App() {
