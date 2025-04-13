@@ -58,7 +58,10 @@ export default function SignIn() {
       <Container>
         <H1>Sign In</H1>
         <Forma
-          onSubmit={handleSubmit(onSubmit)}
+          onSubmit={handleSubmit(onSubmit, () => {
+            setShake(true);
+            setTimeout(() => setShake(false), 400);
+          })}
           $shake={shake}
           $shakeKeyFrames={shakeKeyFrames}
         >

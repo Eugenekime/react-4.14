@@ -71,7 +71,10 @@ export default function EditProfile() {
       <Container>
         <H1>Edit Profile</H1>
         <Forma
-          onSubmit={handleSubmit(onSubmit)}
+          onSubmit={handleSubmit(onSubmit, () => {
+            setShake(true);
+            setTimeout(() => setShake(false), 400);
+          })}
           $shake={shake}
           $shakeKeyFrames={shakeKeyFrames}
         >

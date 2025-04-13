@@ -70,7 +70,10 @@ export default function SignUp() {
       <Container>
         <H1>Create new account</H1>
         <Forma
-          onSubmit={handleSubmit(onSubmit)}
+          onSubmit={handleSubmit(onSubmit, () => {
+            setShake(true);
+            setTimeout(() => setShake(false), 400);
+          })}
           $shake={shake}
           $shakeKeyFrames={shakeKeyFrames}
         >
@@ -164,7 +167,7 @@ export default function SignUp() {
 
         <TextSignIn>
           Already have an account?
-          <Link to={"SignIn"} style={{ color: "rgba(24, 144, 255, 1)" }}>
+          <Link to={"/sign-in"} style={{ color: "rgba(24, 144, 255, 1)" }}>
             Sign In
           </Link>
           .
